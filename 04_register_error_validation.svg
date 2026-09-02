@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03101E; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <defs>
+    <linearGradient id="gradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071B2D" />
+      <stop offset="100%" stop-color="#03101E" />
+    </linearGradient>
+    <linearGradient id="gradMint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="864" height="900" fill="url(#gradHero)" stroke="#103A5C" stroke-width="0.5"/>
+  <circle cx="200" cy="250" r="180" fill="#EF4444" opacity="0.08" filter="url(#glow)"/>
+
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#071B2D" stroke="#103A5C"/>
+    <text x="64" y="32" fill="#F1F5F9" font-size="24" font-weight="800">IronLink</text>
+    <text x="0" y="130" fill="#EF4444" font-size="14" font-weight="700" letter-spacing="2">ERROR DE REGISTRO</text>
+    <text x="0" y="190" fill="#F1F5F9" font-size="44" font-weight="800">Validación de</text>
+    <text x="0" y="240" fill="#EF4444" font-size="44" font-weight="800">datos fallida.</text>
+    <text x="0" y="300" fill="#94A3B8" font-size="16">Revisa los campos marcados en rojo antes de continuar.</text>
+  </g>
+
+  <g transform="translate(864, 0)">
+    <rect x="0" y="0" width="576" height="900" fill="#03101E"/>
+    <g transform="translate(70, 60)">
+      <text x="0" y="40" fill="#F1F5F9" font-size="26" font-weight="800">Crear una cuenta</text>
+
+      <!-- Email Error -->
+      <text x="0" y="95" fill="#EF4444" font-size="12" font-weight="600">Correo en uso o formato incorrecto</text>
+      <rect x="0" y="107" width="436" height="44" rx="8" fill="#071B2D" stroke="#EF4444" stroke-width="1.5"/>
+      <text x="14" y="134" fill="#F1F5F9" font-size="14">ludwin_duplicado@universidad.edu.sv</text>
+      <text x="0" y="166" fill="#EF4444" font-size="11">Este correo ya está registrado en el clúster IronLink.</text>
+
+      <!-- Phone Error -->
+      <text x="0" y="195" fill="#EF4444" font-size="12" font-weight="600">Teléfono inválido</text>
+      <rect x="0" y="207" width="436" height="44" rx="8" fill="#071B2D" stroke="#EF4444" stroke-width="1.5"/>
+      <text x="14" y="234" fill="#F1F5F9" font-size="14">12345</text>
+      <text x="0" y="266" fill="#EF4444" font-size="11">Debe contener 8 dígitos válidos con prefijo +503.</text>
+
+      <!-- Password Error -->
+      <text x="0" y="295" fill="#EF4444" font-size="12" font-weight="600">Contraseña débil</text>
+      <rect x="0" y="307" width="436" height="44" rx="8" fill="#071B2D" stroke="#EF4444" stroke-width="1.5"/>
+      <text x="14" y="334" fill="#EF4444" font-size="16">123456</text>
+      <text x="0" y="366" fill="#EF4444" font-size="11">Mínimo 8 caracteres, al menos una mayúscula y un número.</text>
+
+      <!-- Confirm Password Mismatch -->
+      <text x="0" y="395" fill="#EF4444" font-size="12" font-weight="600">Las contraseñas no coinciden</text>
+      <rect x="0" y="407" width="436" height="44" rx="8" fill="#071B2D" stroke="#EF4444" stroke-width="1.5"/>
+      <text x="14" y="434" fill="#EF4444" font-size="16">abcdef</text>
+      <text x="0" y="466" fill="#EF4444" font-size="11">Los campos de contraseña deben ser idénticos.</text>
+
+      <rect x="0" y="500" width="436" height="48" rx="10" fill="#EF4444" cursor="pointer"/>
+      <text x="218" y="530" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">CORREGIR FORMULARIO</text>
+    </g>
+  </g>
+</svg>

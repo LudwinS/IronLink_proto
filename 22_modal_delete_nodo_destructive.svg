@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03101E; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <defs>
+    <linearGradient id="gradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071B2D" />
+      <stop offset="100%" stop-color="#03101E" />
+    </linearGradient>
+    <linearGradient id="gradMint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1440" height="900" fill="rgba(0,0,0,0.85)"/>
+
+  <g transform="translate(470, 240)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="500" height="380" rx="18" fill="#071B2D" stroke="#EF4444" stroke-width="2"/>
+    
+    <g transform="translate(36, 36)">
+      <!-- Warning Icon -->
+      <circle cx="28" cy="24" r="22" fill="rgba(239,68,68,0.2)" stroke="#EF4444"/>
+      <text x="28" y="31" fill="#EF4444" font-size="18" font-weight="900" text-anchor="middle">⚠️</text>
+
+      <text x="64" y="32" fill="#F1F5F9" font-size="20" font-weight="800">¿Eliminar nodo permanentemente?</text>
+      
+      <text x="0" y="90" fill="#94A3B8" font-size="14">
+        ¿Estás seguro de que deseas eliminar el nodo <tspan fill="#F1F5F9" font-weight="700">"Sala Principal — ISW 2"</tspan>?
+      </text>
+      
+      <rect x="0" y="115" width="428" height="65" rx="8" fill="rgba(239,68,68,0.15)" stroke="#EF4444"/>
+      <text x="14" y="140" fill="#FCA5A5" font-size="12" font-weight="700">⚠️ ACCIÓN IRREVERSIBLE</text>
+      <text x="14" y="162" fill="#EF4444" font-size="12">Se desconectará a los 8 miembros y se destruirá el historial de chat.</text>
+
+      <!-- Actions -->
+      <g transform="translate(0, 240)">
+        <rect x="0" y="0" width="200" height="46" rx="10" fill="#03101E" stroke="#103A5C" cursor="pointer"/>
+        <text x="100" y="28" fill="#94A3B8" font-size="14" font-weight="600" text-anchor="middle">Cancelar</text>
+
+        <rect x="228" y="0" width="200" height="46" rx="10" fill="url(#gradRed)" cursor="pointer"/>
+        <text x="328" y="28" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">SÍ, ELIMINAR NODO</text>
+      </g>
+    </g>
+  </g>
+</svg>

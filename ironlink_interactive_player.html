@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronLink — Suite Completa de Pantallas &amp; Estados (33 Frames)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+    body {
+      background-color: #010810;
+      color: #F1F5F9;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      height: 56px;
+      background: #071B2D;
+      border-bottom: 1px solid #103A5C;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 100;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      color: #14E3A4;
+      white-space: nowrap;
+    }
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      justify-content: center;
+    }
+    select {
+      background: #03101E;
+      border: 1px solid #103A5C;
+      color: #F1F5F9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+    select:focus {
+      border-color: #14E3A4;
+    }
+    .quick-nav {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-nav {
+      background: #03101E;
+      border: 1px solid #103A5C;
+      color: #94A3B8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-nav:hover {
+      border-color: #14E3A4;
+      color: #14E3A4;
+    }
+    .btn-restart {
+      background: #14E3A4;
+      color: #03101E;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    #viewport {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #010810;
+      overflow: auto;
+      position: relative;
+    }
+    .screen-container {
+      width: 1440px;
+      height: 900px;
+      position: relative;
+      background: #03101E;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+      transform-origin: center center;
+      display: none;
+    }
+    .screen-container.active {
+      display: block;
+      animation: fadeIn 0.15s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0.8; transform: scale(0.99); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .screen-container img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Screen Counter Badge */
+    .screen-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(7, 27, 45, 0.9);
+      border: 1px solid #103A5C;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #14E3A4;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14E3A4" stroke-width="2.5">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="3" fill="#00FFD0"/>
+      </svg>
+      IronLink Master Suite (33 Frames)
+    </div>
+
+    <div class="nav-controls">
+      <button class="btn-nav" onclick="prevScreen()">◀ Anterior</button>
+
+      <select id="screenSelect" onchange="changeScreen(this.value)">
+        <optgroup label="🔐 1. Autenticación &amp; Recuperación (IAM)">
+          <option value="01_login_screen.svg">01. Login Inicial (Default)</option>
+          <option value="02_login_error_credentials.svg">02. ⚠️ Login con Error de Credenciales</option>
+          <option value="03_register_form.svg">03. Registro de Nueva Cuenta</option>
+          <option value="04_register_error_validation.svg">04. ⚠️ Registro con Errores de Validación Inline</option>
+          <option value="05_forgot_password_step1_email.svg">05. Recuperar Clave: Paso 1 (Ingreso de Correo)</option>
+          <option value="06_forgot_password_step2_reset.svg">06. Recuperar Clave: Paso 2 (OTP + Nueva Clave)</option>
+          <option value="07_forgot_password_step3_success.svg">07. Recuperar Clave: Paso 3 (Éxito Actualizada)</option>
+          <option value="08_verification_method_select.svg">08. Verificación: Selección de Método (OTP vs Magic Link)</option>
+          <option value="09_verification_magic_link_waiting.svg">09. Verificación: Esperando Magic Link</option>
+          <option value="06_verification_otp_input.svg">10. Verificación: Ingreso PIN OTP 6 Dígitos</option>
+          <option value="07_verification_error_expired.svg">11. ⚠️ Verificación: Error Código Expirado (401)</option>
+          <option value="12_verification_success.svg">12. Verificación: Cuenta Activada con Éxito</option>
+        </optgroup>
+
+        <optgroup label="📊 2. Dashboard de Nodos &amp; Red P2P">
+          <option value="02_dashboard_nodos.svg">13. Dashboard: Nodos Activos &amp; Métricas</option>
+          <option value="10_dashboard_empty_state.svg">14. Dashboard: Estado Vacío (0 Nodos)</option>
+          <option value="11_dashboard_network_error_offline.svg">15. ⚠️ Dashboard: Error 503 Servidor Desconectado</option>
+          <option value="16_dashboard_mobile_drawer.svg">16. Dashboard Móvil: Drawer Lateral Desplegado</option>
+        </optgroup>
+
+        <optgroup label="💬 3. Workspace de Nodo &amp; Chat Persistente">
+          <option value="03_chat_workspace.svg">17. Chat: Sala Principal en Vivo</option>
+          <option value="18_chat_workspace_empty.svg">18. Chat: Canal Recién Creado (Vacío)</option>
+          <option value="15_chat_error_ws_disconnected.svg">19. ⚠️ Chat: Error Socket WebSockets Desconectado</option>
+          <option value="20_chat_message_context_menu.svg">20. Chat: Menú Contextual de Mensaje (Responder/Editar/Eliminar)</option>
+          <option value="21_chat_subgrupo_channel.svg">21. Chat: Canal Específico de Subgrupo (# Backend Axum)</option>
+        </optgroup>
+
+        <optgroup label="👥 4. Subgrupos &amp; Reuniones (Sprint 2)">
+          <option value="04_subgrupos_view.svg">22. Subgrupos: Lista de Equipos Activos</option>
+          <option value="23_subgrupos_view_empty.svg">23. Subgrupos: Estado Vacío</option>
+          <option value="05_reuniones_view.svg">24. Reuniones: Sesiones Activas &amp; Programadas</option>
+          <option value="25_reuniones_view_empty.svg">25. Reuniones: Estado Vacío</option>
+        </optgroup>
+
+        <optgroup label="🪟 5. Modales, Overlays &amp; Acciones Destructivas">
+          <option value="06_modals_overlay.svg">26. Modales: Perfil de Usuario &amp; Crear Nodo</option>
+          <option value="20_modal_create_nodo_error.svg">27. ⚠️ Modal: Error 409 Nombre de Nodo Duplicado</option>
+          <option value="21_modal_join_nodo_error.svg">28. ⚠️ Modal: Error 404 Token No Encontrado</option>
+          <option value="30_modal_nodo_details_members.svg">29. Modal: Detalles de Nodo &amp; Gestión de Miembros RBAC</option>
+          <option value="32_modal_create_subgrupo.svg">30. Modal: Crear Subgrupo (Público/Privado)</option>
+          <option value="33_modal_create_reunion.svg">31. Modal: Programar Reunión (Fecha/Hora/Meet)</option>
+          <option value="35_modal_profile_change_password_error.svg">32. ⚠️ Modal: Perfil con Error de Contraseña Actual</option>
+          <option value="22_modal_delete_nodo_destructive.svg">33. ⚠️ Modal Peligroso: Confirmar Eliminación de Nodo</option>
+        </optgroup>
+      </select>
+
+      <button class="btn-nav" onclick="nextScreen()">Siguiente ▶</button>
+    </div>
+
+    <button class="btn-restart" onclick="changeScreen('01_login_screen.svg')">↺ Inicio</button>
+  </header>
+
+  <div id="viewport">
+    <div id="activeFrameContainer" class="screen-container active">
+      <img id="activeFrameImg" src="01_login_screen.svg" alt="Frame">
+      <div id="frameBadge" class="screen-badge">Frame 1 de 33</div>
+    </div>
+  </div>
+
+  <script>
+    const select = document.getElementById('screenSelect');
+    const img = document.getElementById('activeFrameImg');
+    const badge = document.getElementById('frameBadge');
+
+    function changeScreen(src) {
+      select.value = src;
+      img.src = src;
+      const index = select.selectedIndex + 1;
+      const total = select.options.length;
+      badge.textContent = `Frame ${index} de ${total} · ${select.options[select.selectedIndex].text}`;
+    }
+
+    function prevScreen() {
+      if (select.selectedIndex > 0) {
+        select.selectedIndex--;
+        changeScreen(select.value);
+      }
+    }
+
+    function nextScreen() {
+      if (select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        changeScreen(select.value);
+      }
+    }
+
+    // Keyboard Arrow Keys navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextScreen();
+      } else if (e.key === 'ArrowLeft') {
+        prevScreen();
+      }
+    });
+
+    function autoScale() {
+      const containerWidth = window.innerWidth;
+      const containerHeight = window.innerHeight - 56;
+      const scaleX = containerWidth / 1460;
+      const scaleY = containerHeight / 920;
+      const scale = Math.min(scaleX, scaleY, 1);
+      
+      document.getElementById('activeFrameContainer').style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('resize', autoScale);
+    autoScale();
+    changeScreen('01_login_screen.svg');
+  </script>
+</body>
+</html>

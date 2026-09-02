@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03101E; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <defs>
+    <linearGradient id="gradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071B2D" />
+      <stop offset="100%" stop-color="#03101E" />
+    </linearGradient>
+    <linearGradient id="gradMint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1440" height="900" fill="#03101E"/>
+  <circle cx="720" cy="350" r="280" fill="#14E3A4" opacity="0.1" filter="url(#glow)"/>
+
+  <g transform="translate(470, 160)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="500" height="500" rx="18" fill="#071B2D" stroke="#14E3A4" stroke-width="2"/>
+    
+    <g transform="translate(40, 50)">
+      <circle cx="210" cy="55" r="44" fill="rgba(20,227,164,0.25)" stroke="#14E3A4" stroke-width="2.5"/>
+      <path d="M195 55 L205 65 L228 42" stroke="#14E3A4" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+      <text x="210" y="140" fill="#F1F5F9" font-size="24" font-weight="800" text-anchor="middle">¡Cuenta Verificada!</text>
+      <text x="210" y="170" fill="#94A3B8" font-size="14" text-anchor="middle">Tu identidad ha sido confirmada en el clúster.</text>
+      <text x="210" y="195" fill="#14E3A4" font-size="13" font-weight="700" text-anchor="middle">Rol asignado: Estudiante / Administrador de Nodo</text>
+
+      <rect x="10" y="270" width="400" height="50" rx="10" fill="url(#gradMint)" cursor="pointer"/>
+      <text x="210" y="301" fill="#03101E" font-size="15" font-weight="800" text-anchor="middle">INGRESAR AL DASHBOARD</text>
+    </g>
+  </g>
+
+</svg>

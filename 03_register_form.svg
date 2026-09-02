@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03101E; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <defs>
+    <linearGradient id="gradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071B2D" />
+      <stop offset="100%" stop-color="#03101E" />
+    </linearGradient>
+    <linearGradient id="gradMint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <linearGradient id="gradAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14E3A4" />
+      <stop offset="100%" stop-color="#00FFD0" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="864" height="900" fill="url(#gradHero)" stroke="#103A5C" stroke-width="0.5"/>
+  <circle cx="200" cy="250" r="180" fill="#00FFD0" opacity="0.08" filter="url(#glow)"/>
+
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#071B2D" stroke="#103A5C" stroke-width="1.5"/>
+    <circle cx="24" cy="24" r="10" fill="none" stroke="#14E3A4" stroke-width="3"/>
+    <circle cx="24" cy="24" r="4" fill="#00FFD0"/>
+    <text x="64" y="32" fill="#F1F5F9" font-size="24" font-weight="800">IronLink</text>
+    <text x="0" y="130" fill="#14E3A4" font-size="14" font-weight="700" letter-spacing="2">NUEVA CUENTA INSTITUCIONAL</text>
+    <text x="0" y="190" fill="#F1F5F9" font-size="44" font-weight="800">Únete a la red</text>
+    <text x="0" y="240" fill="#F1F5F9" font-size="44" font-weight="800">de ingeniería y</text>
+    <text x="0" y="290" fill="#14E3A4" font-size="44" font-weight="800">colaboración P2P.</text>
+  </g>
+
+  <g transform="translate(864, 0)">
+    <rect x="0" y="0" width="576" height="900" fill="#03101E"/>
+    <g transform="translate(70, 70)">
+      <text x="0" y="40" fill="#F1F5F9" font-size="26" font-weight="800">Crear una cuenta</text>
+      <text x="0" y="65" fill="#94A3B8" font-size="13">Ingresa tus datos para registrarte en el clúster</text>
+
+      <!-- Full name -->
+      <text x="0" y="110" fill="#94A3B8" font-size="12" font-weight="600">Nombre completo</text>
+      <rect x="0" y="122" width="436" height="44" rx="8" fill="#071B2D" stroke="#103A5C"/>
+      <text x="14" y="149" fill="#F1F5F9" font-size="14">Ludwin Alexander</text>
+
+      <!-- Email -->
+      <text x="0" y="190" fill="#94A3B8" font-size="12" font-weight="600">Correo institucional (@universidad.edu.sv)</text>
+      <rect x="0" y="202" width="436" height="44" rx="8" fill="#071B2D" stroke="#103A5C"/>
+      <text x="14" y="229" fill="#F1F5F9" font-size="14">ludwin@universidad.edu.sv</text>
+
+      <!-- Phone -->
+      <text x="0" y="270" fill="#94A3B8" font-size="12" font-weight="600">Teléfono (El Salvador +503)</text>
+      <rect x="0" y="282" width="436" height="44" rx="8" fill="#071B2D" stroke="#103A5C"/>
+      <text x="14" y="309" fill="#F1F5F9" font-size="14">+503 7123-4567</text>
+
+      <!-- Password -->
+      <text x="0" y="350" fill="#94A3B8" font-size="12" font-weight="600">Contraseña (Mínimo 8 caracteres)</text>
+      <rect x="0" y="362" width="436" height="44" rx="8" fill="#071B2D" stroke="#103A5C"/>
+      <text x="14" y="389" fill="#94A3B8" font-size="16">••••••••••••••••</text>
+
+      <!-- Confirm Password -->
+      <text x="0" y="430" fill="#94A3B8" font-size="12" font-weight="600">Confirmar contraseña</text>
+      <rect x="0" y="442" width="436" height="44" rx="8" fill="#071B2D" stroke="#103A5C"/>
+      <text x="14" y="469" fill="#94A3B8" font-size="16">••••••••••••••••</text>
+
+      <!-- Submit -->
+      <rect x="0" y="520" width="436" height="48" rx="10" fill="url(#gradMint)" cursor="pointer"/>
+      <text x="218" y="550" fill="#03101E" font-size="14" font-weight="800" text-anchor="middle">REGISTRARSE Y VERIFICAR</text>
+
+      <text x="140" y="605" fill="#94A3B8" font-size="13">¿Ya tienes cuenta?</text>
+      <text x="260" y="605" fill="#14E3A4" font-size="13" font-weight="700">Inicia sesión</text>
+    </g>
+  </g>
+</svg>
